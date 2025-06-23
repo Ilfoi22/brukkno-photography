@@ -1,5 +1,5 @@
 .hero {
-    padding: 0;
+    padding: 4rem 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -12,20 +12,23 @@
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .text {
     flex: 1;
+    min-width: 280px;
 }
 
 .title {
     font-size: 2.5rem;
     margin: 0 0 1rem;
+    line-height: 1.2;
 }
 
 .subtitle {
     font-size: 1.25rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0 0 2rem;
 }
 
@@ -33,7 +36,7 @@
     font-family: monospace;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background-color: #B39AD9;
+    background-color: #523732;
     border: none;
     border-radius: 6px;
     color: #fff;
@@ -42,7 +45,7 @@
 }
 
 .button:hover {
-    background-color: #a189c1;
+    background-color: #704e44;
 }
 
 .decorativeBlob {
@@ -52,22 +55,40 @@
     aspect-ratio: 1 / 1;
 }
 
-@media (max-width: 768px) {
-    .decorativeBlob {
-        width: 100%;
-        max-width: none;
-        aspect-ratio: auto;
-        height: 200px;
+/* ------ Responsive Styles ------ */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
     }
 }
-
 
 @media (max-width: 768px) {
     .inner {
         flex-direction: column;
+        text-align: center;
     }
 
-    .imageWrapper {
-        margin-top: 2rem;
+    .decorativeBlob {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto 2rem;
+    }
+
+    .title {
+        font-size: 1.75rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .button {
+        font-size: 0.95rem;
+        padding: 0.6rem 1.25rem;
     }
 }

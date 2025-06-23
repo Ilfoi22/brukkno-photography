@@ -7,7 +7,7 @@ export const About = () => {
             <Container>
                 <div className={styles.inner}>
                     <div className={styles.imageWrapper}>
-                        <img src="/src/assets/julia1.jpg" alt="Юліна усмішка" className={styles.photo}/>
+                        <img src="/public/julia1.jpg" alt="Юліна усмішка" className={styles.photo}/>
                     </div>
                     <div className={styles.content}>
                         <h2 className={styles.heading}>Про мене</h2>

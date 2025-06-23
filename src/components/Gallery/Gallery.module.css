@@ -12,10 +12,11 @@
 }
 
 .slider {
-    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .arrow {
@@ -23,9 +24,10 @@
     border: none;
     font-size: 2rem;
     cursor: pointer;
-    padding: 0 1rem;
+    padding: 0.5rem 1rem;
     color: #666;
     transition: color 0.2s ease;
+    user-select: none;
 }
 
 .arrow:hover {
@@ -33,10 +35,11 @@
 }
 
 .grid {
-    flex: 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
 .card {
@@ -45,23 +48,16 @@
     animation: slide-in 0.5s ease-in-out;
 }
 
-.card:nth-child(1) {
-    animation-delay: 0.5s;
-}
-
-.card:nth-child(2) {
-    animation-delay: 0.5s;
-}
-
+.card:nth-child(1),
+.card:nth-child(2),
 .card:nth-child(3) {
     animation-delay: 0.5s;
 }
 
 .placeholder {
-    background-color: #ECE5FA;
+    background-color: #845950;
     width: 100%;
     aspect-ratio: 3 / 4;
-    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +65,7 @@
 
 .number {
     font-size: 4rem;
-    color: #000;
+    color: #F8F9FA;
 }
 
 .overlay {
@@ -92,6 +88,7 @@
     color: #fff;
     text-align: center;
     font-size: 1rem;
+    line-height: 1.4;
 }
 
 .dots {
@@ -110,24 +107,60 @@
     transition: background-color 0.2s ease;
 }
 
-.dot:hover {
-    background-color: #888;
-}
-
+.dot:hover,
 .active {
     background-color: #888;
 }
 
+/* -------------------- Responsive Breakpoints -------------------- */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .slider {
-        flex-direction: column;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
     }
 
     .arrow {
-        margin: 1rem 0;
+        font-size: 2rem;
+        padding: 0.25rem;
+        margin: 0;
+        background: transparent;
+        border: none;
+    }
+
+    .grid {
+        display: flex;
+        flex: 0 1 auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        flex: 0 0 70vw;
+        max-width: 70vw;
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+
+    .card:not(:first-child) {
+        display: none;
+    }
+
+    .number {
+        font-size: 2.5rem;
+    }
+
+    .text {
+        font-size: 0.95rem;
     }
 }
+

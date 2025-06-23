@@ -39,7 +39,7 @@
 }
 
 .card {
-    background: #D8CAF0;
+    background: #845950;
     padding: 2rem 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -59,13 +59,13 @@
 .text {
     font-size: 1rem;
     line-height: 1.4;
-    color: #333;
+    color: #FAF8FD;
     margin-bottom: 1rem;
 }
 
 .name {
     font-weight: bold;
-    color: #555;
+    color: #F8F9FA;
     font-size: 0.9rem;
 }
 
@@ -93,17 +93,50 @@
     background-color: #888;
 }
 
-/* Адаптив */
 @media (max-width: 768px) {
+    .testimonials {
+        padding: 6rem 0;
+    }
+
     .slider {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: nowrap;
     }
 
     .grid {
-        grid-template-columns: 1fr;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 70vw;
+        gap: 0;
+    }
+
+    .card {
+        flex: 0 0 80vw;
+        max-width: 80vw;
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+
+    .card:not(:first-child) {
+        display: none;
     }
 
     .arrow {
-        margin: 1rem 0;
+        font-size: 2rem;
+        margin: 0;
+        padding: 0.5rem;
+    }
+
+    .text {
+        font-size: 0.95rem;
+    }
+
+    .name {
+        font-size: 0.85rem;
     }
 }

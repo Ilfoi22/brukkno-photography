@@ -1,6 +1,11 @@
 .contact {
-    padding: 4rem 0;
+    min-height: 100vh;
+    padding: 4rem 1rem;
     background-color: #FAF8FD;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .heading {
@@ -10,6 +15,7 @@
 }
 
 .form {
+    width: 100%;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -28,6 +34,7 @@
 
 .field input,
 .field textarea {
+    width: 100%;
     padding: 0.75rem 1rem;
     font-size: 1rem;
     border: 1px solid #ccc;
@@ -38,7 +45,7 @@
 
 .field input:focus,
 .field textarea:focus {
-    border-color: #b39ad9;
+    border-color: #523732;
 }
 
 .field textarea {
@@ -51,7 +58,7 @@
     margin: 0 auto;
     padding: 0.75rem 2rem;
     font-size: 1rem;
-    background-color: #b39ad9;
+    background-color: #523732;
     color: #fff;
     border: none;
     border-radius: 6px;
@@ -60,11 +67,19 @@
 }
 
 .button:hover {
-    background-color: #a189c1;
+    background-color: #704e44;
 }
 
 @media (max-width: 768px) {
+    .contact {
+        padding: 2rem 1rem;
+    }
+
     .form {
-        padding: 0 1rem;
+        padding: 0;
+    }
+
+    .button {
+        width: 100%;
     }
 }

@@ -9,7 +9,9 @@
 .inner {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .imageWrapper {
@@ -24,16 +26,20 @@
     max-width: 100%;
     height: auto;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
 }
 
 .content {
     flex: 2;
     padding-left: 2rem;
+    min-width: 280px;
 }
 
 .heading {
     font-size: 2rem;
     margin-bottom: 1rem;
+    line-height: 1.3;
 }
 
 .text {
@@ -53,12 +59,44 @@
     margin-bottom: 0.75rem;
 }
 
+/* ------- Responsive Fixes ------- */
+@media (max-width: 1024px) {
+    .heading {
+        font-size: 1.75rem;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+
+    .content {
+        padding-left: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .inner {
         flex-direction: column;
+        text-align: center;
+    }
+
+    .content {
+        padding-left: 0;
     }
 
     .imageWrapper {
         margin-bottom: 2rem;
+    }
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .text {
+        font-size: 1rem;
+    }
+
+    .list li {
+        font-size: 0.95rem;
     }
 }

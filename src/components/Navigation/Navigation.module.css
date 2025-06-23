@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 4rem;
-    background-color: #B39AD9;
+    background-color: #3D241F;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -15,6 +15,12 @@
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    color: #ffffff;
 }
 
 .ul {
@@ -52,4 +58,27 @@
 
 .link:hover::after {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .ul {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #3D241F;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 1rem 2rem;
+        gap: 1rem;
+        display: none;
+    }
+
+    .open {
+        display: flex;
+    }
 }
