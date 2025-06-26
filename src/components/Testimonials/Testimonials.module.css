@@ -2,13 +2,14 @@
     min-height: 100vh;
     box-sizing: border-box;
     padding: 12rem 0;
-    background-color: #EFF0F2;
+    background-color: var(--bg-color);
 }
 
 .heading {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
 .slider {
@@ -23,12 +24,12 @@
     font-size: 2rem;
     cursor: pointer;
     padding: 0 1rem;
-    color: #666;
+    color: var(--arrow-color);
     transition: color 0.2s ease;
 }
 
 .arrow:hover {
-    color: #000;
+    color: var(--hover);
 }
 
 .grid {
@@ -39,10 +40,10 @@
 }
 
 .card {
-    background: #845950;
+    background: var(--accent);
     padding: 2rem 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px -2px var(--card-shadow), 0 3px 6px -3px var(--card-shadow);
+    border-radius: 10px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -51,7 +52,7 @@
 .avatar {
     width: 60px;
     height: 60px;
-    background-color: #F8F9FA;
+    background-color: var(--for-dark-bg-color);
     border-radius: 50%;
     margin: 0 auto 1rem;
 }
@@ -59,13 +60,13 @@
 .text {
     font-size: 1rem;
     line-height: 1.4;
-    color: #FAF8FD;
+    color: var(--for-dark-bg-color);
     margin-bottom: 1rem;
 }
 
 .name {
     font-weight: bold;
-    color: #F8F9FA;
+    color: var(--for-dark-bg-color);
     font-size: 0.9rem;
 }
 
@@ -79,18 +80,15 @@
 .dot {
     width: 10px;
     height: 10px;
-    background-color: #ccc;
+    background-color: var(--dot-color);
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
-.dot:hover {
-    background-color: #888;
-}
-
+.dot:hover,
 .active {
-    background-color: #888;
+    background-color: var(--dot-active);
 }
 
 @media (max-width: 768px) {

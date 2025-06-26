@@ -2,11 +2,11 @@ import {useState} from "react"
 import Container from "../Layout/Container"
 import styles from "./Gallery.module.css"
 
-const TOTAL = 5
-const items = Array.from({length: TOTAL}, (_, i) => i + 1)
+const TOTAL = 5;
+const items = Array.from({length: TOTAL}, (_, i) => i + 1);
 
 export const Gallery = () => {
-    const [current, setCurrent] = useState(0)
+    const [current, setCurrent] = useState(0);
 
     const next = () => setCurrent((current + 1) % TOTAL)
     const prev = () => setCurrent((current - 1 + TOTAL) % TOTAL)
