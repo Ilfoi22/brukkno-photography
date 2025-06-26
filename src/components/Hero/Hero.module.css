@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: #FAF8FD;
+    background: var(--bg-color);
 }
 
 .inner {
@@ -24,28 +24,31 @@
     font-size: 2.5rem;
     margin: 0 0 1rem;
     line-height: 1.2;
+    color: var(--text-color);
 }
 
 .subtitle {
     font-size: 1.25rem;
     line-height: 1.6;
     margin: 0 0 2rem;
+    color: var(--text-color);
 }
 
 .button {
     font-family: monospace;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
-    background-color: #523732;
+    background-color: var(--accent);
+    color: var(--for-dark-bg-color);
     border: none;
     border-radius: 6px;
-    color: #fff;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    box-shadow: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
 }
 
 .button:hover {
-    background-color: #704e44;
+    background-color: var(--hover);
 }
 
 .decorativeBlob {
@@ -54,6 +57,23 @@
     margin-left: auto;
     aspect-ratio: 1 / 1;
 }
+
+.socials {
+    display: flex;
+    gap: 1rem;
+    margin: 0.75rem 0;
+}
+
+.socials a {
+    color: var(--text-color);
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+    color: var(--hover);
+}
+
 
 /* ------ Responsive Styles ------ */
 @media (max-width: 1024px) {
@@ -73,14 +93,18 @@
     }
 
     .decorativeBlob {
-        width: 100%;
+        width: 80vw;
+        height: 80vw;
         max-width: 300px;
-        height: auto;
         margin: 0 auto 2rem;
     }
 
     .title {
         font-size: 1.75rem;
+    }
+
+    .socials {
+        justify-content: center;
     }
 
     .subtitle {

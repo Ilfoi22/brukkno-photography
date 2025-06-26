@@ -5,11 +5,28 @@ import {About} from "./components/About/About.tsx";
 import {Gallery} from "./components/Gallery/Gallery.tsx";
 import {Testimonials} from "./components/Testimonials/Testimonials.tsx";
 import {Contact} from "./components/Contact/Contact.tsx";
+import {useEffect, useState} from "react";
+
+const getDefaultTheme = (): 'light' | 'dark' => {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    return 'light';
+};
 
 function App() {
+    const [theme, setTheme] = useState(getDefaultTheme);
+
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+    }, [theme]);
+
+    const toggleTheme = () => setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
     return (
         <>
-            <Navigation/>
+            <Navigation onToggleTheme={toggleTheme} currentTheme={theme}/>
 
             <main>
                 <section id="hero">

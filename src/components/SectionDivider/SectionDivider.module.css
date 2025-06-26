@@ -1,0 +1,12 @@
+.section-divider {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.section-divider svg {
+    display: block;
+    width: 100%;
+    height: 100px;
+}

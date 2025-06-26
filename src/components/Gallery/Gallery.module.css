@@ -2,13 +2,14 @@
     min-height: 100vh;
     box-sizing: border-box;
     padding: 7rem 0;
-    background-color: #FAF8FD;
+    background-color: var(--bg-alt-2);
 }
 
 .heading {
     text-align: center;
     font-size: 2rem;
     margin-bottom: 2rem;
+    color: var(--text-color);
 }
 
 .slider {
@@ -25,13 +26,13 @@
     font-size: 2rem;
     cursor: pointer;
     padding: 0.5rem 1rem;
-    color: #666;
+    color: var(--arrow-color);
     transition: color 0.2s ease;
     user-select: none;
 }
 
 .arrow:hover {
-    color: #000;
+    color: var(--hover);
 }
 
 .grid {
@@ -46,6 +47,16 @@
     position: relative;
     overflow: hidden;
     animation: slide-in 0.5s ease-in-out;
+    box-shadow: 0 6px 12px -2px var(--card-shadow), 0 3px 6px -3px var(--card-shadow);
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card:hover .overlay {
+    opacity: 1;
 }
 
 .card:nth-child(1),
@@ -55,7 +66,7 @@
 }
 
 .placeholder {
-    background-color: #845950;
+    background-color: var(--accent);
     width: 100%;
     aspect-ratio: 3 / 4;
     display: flex;
@@ -65,7 +76,7 @@
 
 .number {
     font-size: 4rem;
-    color: #F8F9FA;
+    color: var(--for-dark-bg-color);
 }
 
 .overlay {
@@ -74,21 +85,18 @@
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 0;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: flex-end;
     padding: 1rem;
     transition: opacity 0.7s ease;
 }
 
-.card:hover .overlay {
-    opacity: 1;
-}
-
 .text {
-    color: #fff;
+    color: var(--for-dark-bg-color);
     text-align: center;
     font-size: 1rem;
     line-height: 1.4;
+    margin-bottom: 3rem;
 }
 
 .dots {
@@ -101,7 +109,7 @@
 .dot {
     width: 10px;
     height: 10px;
-    background-color: #ccc;
+    background-color: var(--dot-color);
     border-radius: 50%;
     cursor: pointer;
     transition: background-color 0.2s ease;
@@ -109,7 +117,7 @@
 
 .dot:hover,
 .active {
-    background-color: #888;
+    background-color: var(--dot-active);
 }
 
 /* -------------------- Responsive Breakpoints -------------------- */
